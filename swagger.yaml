@@ -1,0 +1,250 @@
+basePath: /dev/mch/v1
+host: 192.168.0.167:9555
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+  description: Andy Api Doc
+  license:
+    name: CompanyName 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Andy Api Doc
+  version: "1.0"
+paths:
+  /device/bind:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: 设备Mac地址
+        in: formData
+        name: device_mac
+        required: true
+        type: string
+      - description: 设备名称
+        in: formData
+        name: device_name
+        required: true
+        type: string
+      - description: 设备类型ID
+        in: formData
+        name: device_type_id
+        required: true
+        type: integer
+      - description: 设备类型名称
+        in: formData
+        name: device_type_name
+        required: true
+        type: string
+      - description: 投放地点ID
+        in: formData
+        name: place_id
+        required: true
+        type: integer
+      - description: 投放地点名称
+        in: formData
+        name: place_name
+        required: true
+        type: string
+      - description: 礼品ID
+        in: formData
+        name: gift_id
+        required: true
+        type: integer
+      - description: 礼品名称
+        in: formData
+        name: gift_name
+        required: true
+        type: string
+      - description: 礼品库存
+        in: formData
+        name: gift_stock
+        required: true
+        type: integer
+      - description: 中奖概率
+        in: formData
+        name: rate
+        required: true
+        type: integer
+      - description: 设备场景值  1|线上 2|线下
+        in: formData
+        name: line
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 绑定设备
+      tags:
+      - Device
+  /device/info:
+    get:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: 设备ID
+        in: query
+        name: device_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 获取设备
+      tags:
+      - Device
+  /device/unbind:
+    delete:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: 设备ID
+        in: formData
+        name: device_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 解绑设备
+      tags:
+      - Device
+  /device/upd:
+    put:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: 设备ID地址
+        in: formData
+        name: device_id
+        required: true
+        type: string
+      - description: 设备名称
+        in: formData
+        name: device_name
+        required: true
+        type: string
+      - description: 设备类型ID
+        in: formData
+        name: device_type_id
+        required: true
+        type: integer
+      - description: 设备类型名称
+        in: formData
+        name: device_type_name
+        required: true
+        type: string
+      - description: 投放地点ID
+        in: formData
+        name: place_id
+        required: true
+        type: integer
+      - description: 投放地点名称
+        in: formData
+        name: place_name
+        required: true
+        type: string
+      - description: 礼品ID
+        in: formData
+        name: gift_id
+        required: true
+        type: integer
+      - description: 礼品名称
+        in: formData
+        name: gift_name
+        required: true
+        type: string
+      - description: 礼品库存
+        in: formData
+        name: gift_stock
+        required: true
+        type: integer
+      - description: 中奖概率
+        in: formData
+        name: rate
+        required: true
+        type: integer
+      - description: 设备场景值  1|线上 2|线下
+        in: formData
+        name: line
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 更新设备
+      tags:
+      - Device
+  /win/send:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: 兑奖记录ID
+        in: formData
+        name: record_id
+        required: true
+        type: string
+      - description: 快递公司名称
+        in: formData
+        name: express_company
+        required: true
+        type: string
+      - description: 快递单号
+        in: formData
+        name: express_no
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 快递奖品
+      tags:
+      - Win
+swagger: "2.0"

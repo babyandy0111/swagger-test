@@ -1,0 +1,313 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Andy Api Doc",
+    "title": "Andy Api Doc",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "name": "API Support",
+      "email": "support@swagger.io"
+    },
+    "license": {
+      "name": "CompanyName 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0"
+  },
+  "host": "192.168.0.167:9555",
+  "basePath": "/dev/mch/v1",
+  "paths": {
+    "/device/bind": {
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Device"
+        ],
+        "summary": "绑定设备",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Token",
+            "name": "Token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备Mac地址",
+            "name": "device_mac",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备名称",
+            "name": "device_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "设备类型ID",
+            "name": "device_type_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备类型名称",
+            "name": "device_type_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "投放地点ID",
+            "name": "place_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "投放地点名称",
+            "name": "place_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "礼品ID",
+            "name": "gift_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "礼品名称",
+            "name": "gift_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "礼品库存",
+            "name": "gift_stock",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "中奖概率",
+            "name": "rate",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备场景值  1|线上 2|线下",
+            "name": "line",
+            "in": "formData",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/device/info": {
+      "get": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Device"
+        ],
+        "summary": "获取设备",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Token",
+            "name": "Token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备ID",
+            "name": "device_id",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/device/unbind": {
+      "delete": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Device"
+        ],
+        "summary": "解绑设备",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Token",
+            "name": "Token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备ID",
+            "name": "device_id",
+            "in": "formData",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/device/upd": {
+      "put": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Device"
+        ],
+        "summary": "更新设备",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Token",
+            "name": "Token",
+            "in": "header",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备ID地址",
+            "name": "device_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备名称",
+            "name": "device_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "设备类型ID",
+            "name": "device_type_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备类型名称",
+            "name": "device_type_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "投放地点ID",
+            "name": "place_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "投放地点名称",
+            "name": "place_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "礼品ID",
+            "name": "gift_id",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "礼品名称",
+            "name": "gift_name",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "礼品库存",
+            "name": "gift_stock",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "description": "中奖概率",
+            "name": "rate",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "设备场景值  1|线上 2|线下",
+            "name": "line",
+            "in": "formData",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
